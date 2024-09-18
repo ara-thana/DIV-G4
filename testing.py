@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the large CSV file
-input_file = 'TMDB_movie_dataset_1.csv'
+input_file = 'TMDB_movie_dataset_5.csv'
 df = pd.read_csv(input_file)
 
 # Get the total number of rows in the file
@@ -19,6 +19,6 @@ for i in range(5):
     else:
         smaller_df = df[start_row:start_row + rows_per_file]
     
-    output_file = f'data/TMDB_movie_dataset_1_{i+1}.csv'
+    output_file = f'data/TMDB_movie_dataset_5_{i+1}.csv'
     smaller_df.to_csv(output_file, index=False)
     print(f'Saved {output_file}')
