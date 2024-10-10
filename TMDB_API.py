@@ -22,5 +22,5 @@ for i in range(1, 6):
     all_results.extend(results)  # Combine results from all pages
 
 # Write the combined results to a single file
-with open("popular_movies.json", "w", encoding="utf-8") as file:
+with open("data/json_data/popular_movies.json", "w", encoding="utf-8") as file:
     json.dump(all_results, file, ensure_ascii=False, indent=4)
