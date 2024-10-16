@@ -9,6 +9,7 @@ def obtener_url_wikipedia(titulo_pelicula, es_film=False):
         titulo_formateado += '_(film)' 
     url_base = "https://en.wikipedia.org/wiki/"
     return url_base + titulo_formateado
+
 def obtener_info_pelicula(titulo):
     url = obtener_url_wikipedia(titulo)
     response = requests.get(url)
@@ -43,6 +44,7 @@ def obtener_info_pelicula(titulo):
         return obtener_info_pelicula_film(titulo)
     
     return pelicula_info
+
 def obtener_info_pelicula_film(titulo):
     url = obtener_url_wikipedia(titulo, es_film=True)
     response = requests.get(url)
@@ -91,7 +93,7 @@ def guardar_en_excel(datos_peliculas, nombre_archivo):
     df = pd.DataFrame(datos_peliculas)
     df.to_excel(nombre_archivo, index=False)
 
-ruta_archivo_excel = r'C:\Users\María Fernández\Documents\4º año\DIV\movies_and_platforms.xlsx'
+ruta_archivo_excel = r'/Users/thana/Downloads/DIV-G4/movies_and_platforms.xlsx'
 titulos_peliculas = leer_titulos_desde_excel(ruta_archivo_excel)
 
 peliculas_info = []

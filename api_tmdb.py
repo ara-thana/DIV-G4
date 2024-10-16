@@ -62,6 +62,7 @@ def obtener_peliculas_populares(max_paginas=5):
         peliculas.extend(resultados)
     
     return peliculas
+
 def crear_excel_peliculas(peliculas):
     lista_datos = []
     titulos_vistos = set()  
@@ -79,7 +80,7 @@ def crear_excel_peliculas(peliculas):
             continue
         plataformas = obtener_plataformas(movie_id)
         if not plataformas:
-            plataformas = ["Not available"
+            plataformas = ["Not available"]
         presupuesto = detalles.get('budget', 'N/A')
         recaudacion = detalles.get('revenue', 'N/A')
         sinopsis = detalles.get('overview', 'N/A')
